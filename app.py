@@ -1,7 +1,7 @@
+from flask import *
 import bitarray as bitA
 import mmh3
 import hashlib
-from flask import Flask, flash, request, redirect, url_for, render_template, Response
 app = Flask(__name__)
 # Filter Length
 filter_len = 37
