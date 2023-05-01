@@ -1,0 +1,106 @@
+body{
+    text-align: center;
+}
+#main_screen{
+    text-align: center;
+    margin: 2rem 2rem;
+}
+#heading{
+    margin: 2rem 0rem;
+    text-align: center;
+}
+#headingSentence{
+    font-family: 'Bungee Inline', cursive;
+    font-size: 30px;
+}
+.row{
+    text-align: center;
+    margin: 1rem;
+    padding: 0.5rem;
+}
+.col{
+    margin: 0.5rem;
+    padding: 0.25rem;
+    text-align: center;
+}
+table{
+    text-align: center;
+    padding: 1rem;
+    font-family: 'Noto Serif';
+    /* font-size: 13px; */
+}
+h6{
+    padding: 1rem;
+    margin: 1rem;
+}
+#normalHead{
+    font-family: 'Noto Serif';
+    font-size: 22px;
+}
+#normalHead2{
+    font-family: 'Noto Serif';
+    font-size: 15px;
+    text-align: left;
+}
+#footer{
+    text-align: center;
+    margin: 3rem 0rem;
+}
+p{
+    font-family: 'Zeyada', cursive;
+    font-size: 20px;
+}
+input[type=submit]{
+    font-family: 'Roboto Slab';
+    font-size: 12px; 
+}
+/* Concept */
+.details{
+    font-family: 'Roboto Slab';
+    font-size: 18px; 
+
+}
+#wordRecord{ 
+    font-family: 'Noto Serif';
+    font-size: 12px;
+    text-align: left;
+}
+/*  */
+/* Navigation bar */
+a{
+    font-family: 'Roboto Slab';
+}
+/*  */
+.explanationText{
+    font-size: 18px;
+    font-family: 'Noto Serif';
+    text-align: left;
+}
+.fdetails{
+    text-align: left;
+    font-family: 'Roboto Slab', serif;
+    
+}
+
+.fcontent{
+    font-family: 'Noto Serif', serif;
+}
+
+button.btn.btn-outline-dark.ownbutton {
+    /* font-family: Bungee Inline; */
+font-family: 'Roboto Slab', serif;
+text-align: center;
+text-justify:auto;
+line-height: 1.8rem;
+/* font-family: 'Noto Serif', serif; */
+/* font-family: 'Zeyada', cursive; */
+}
+
+/* 
+<!-- 
+font-family: 'Bungee Inline', cursive;
+font-family: 'Noto Serif', serif;
+font-family: 'Roboto Slab', serif;
+font-family: 'Zeyada', cursive;
+ -->
+*/

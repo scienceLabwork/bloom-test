@@ -1,0 +1,51 @@
+<!-- Webpage : About.html -->
+<!-- Contents : This web page consist of the project creator details  -->
+{% block content %}
+{% include 'header.html' %}
+
+<body>
+    {% include 'navbar.html' %}
+    <!-- Navigation Bar -->
+    <div>
+        <div id="heading">
+            <h3 id="headingSentence">
+                Details of the Project
+            </h3>
+        </div>
+        <div class="container">
+            <table class="table table-bordered">
+                <tr>
+                    <td>Name</td>
+                    <td>Gaurav Golchha</td>
+                </tr>
+                <tr>
+                    <td>Roll No</td>
+                    <td>20BCE079</td>
+                </tr>
+                <tr>
+                    <td>Course Code</td>
+                    <td>2CSDE75-Advance Data Structure</td>
+                </tr>
+                <tr>
+                    <td>Title</td>
+                    <td>Demonstration of bloom filters and its working</td>
+                </tr>
+                <tr>
+                    <td>Submission </td>
+                    <td>Innovative Assignment, 2022 - 2023</td>
+                </tr>
+                <tr>
+                    <td>Technology Used </td>
+                    <td>Flask, Bootstrap</td>
+                </tr>
+                <tr>
+                    <td>Programming Language </td>
+                    <td>Python, HTML, CSS</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <!-- Bottom Bar -->
+    {% include 'bottombar.html' %}
+    {% endblock %}
+</body>

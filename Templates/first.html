@@ -1,0 +1,59 @@
+{% block content %}
+{% include 'fheader.html' %}
+{% include 'nav2.html' %}
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="container" style="overflow-y: auto; height: 40rem;">
+                <div id="heading">
+                    <h3 id="headingSentence">Bloom Filters</h3>
+                </div>
+                <p class="fdetails"><i class="fa-solid fa-arrow-right"></i> Bloom filters are probabilistic data structures which are used to test whether an element is a member of a set. 
+                    First introduced in 1970 by Burton Howard Bloom and since then, they have been widely used in applications where memory and computation are constrained.</p>
+                <p class="fdetails"><i class="fa-solid fa-arrow-right"></i> Here we accept the False positives, but it is 100% accurate about Negatives, so no chance of getting a false negatives</p>
+                <p class="fdetails"><i class="fa-solid fa-arrow-right"></i> Here where hash functions are used to check whether an element (here string) is present in set or not.
+                    Also a new element is added in the set only after some fixed number of search operations.
+                </p>
+                <p class="fdetails"><i class="fa-solid fa-arrow-right"></i> 
+                    The basic idea behind a Bloom filter is to use a bit array of length m, and k different hash functions that map elements to positions in the bit array. 
+                    When an element is inserted into the Bloom filter, each of the k hash functions is applied to the element, and the corresponding bit positions in the bit array are set to 1. 
+                    To test whether an element is in the set, the same k hash functions are applied to the element, and if all of the corresponding bit positions in the bit array are set to 1, the element is considered to be in the set. 
+                    However, if any of the bit positions are set to 0, the element is not in the set.
+                </p>
+            </div>
+        </div>
+        <div class="col">
+            <div>
+                <div id="heading">
+                    <h3 id="headingSentence">User defined Bloom Filters</h3>
+                </div>
+                <h6 id="normalHead"><u>Bloom Filter Details</u></h6>
+                <form method="POST">
+                    <div class="mb-3 fcontent"  style="text-align: left;">
+                        <label for="idK" class="form-label"><i class="fa-solid fa-star"></i> Number of Hash Functions (k)</label>
+                        <input type="number" readonly class="form-control-plaintext" class="form-control" aria-label="idK" name="idK" id="idK" value="3" aria-describedby="descK">
+                        <div id="descK" class="form-text">More hash functions more robust</div>
+                    </div>
+                    <div class="mb-3 fcontent" style="text-align: left;">
+                        <label for="idM" class="form-label"><i class="fa-solid fa-star"></i> Size of bit array (m) </label>
+                        <input type="number" class="form-control" aria-label="idM" id="idM"  name="idM" value="37" aria-describedby="descM">
+                        <div id="descM" class="form-text">More size more accuracy</div>
+                    </div>
+                    <div class="mb-3 fcontent" style="text-align: left;">
+                        <label for="idN" class="form-label"><i class="fa-solid fa-star"></i> Number of Queries (n)</label>
+                        <input type="number" class="form-control" aria-label="idN" id="idN" name="idN" value="25" aria-describedby="descM">
+                        <div id="descN" class="form-text">Applicable for large systems</div>
+                    </div>
+                    <div class="mb-3 fcontent" style="text-align: left;">
+                        <label for="idC" class="form-label"><i class="fa-solid fa-star"></i> Number of tries after which a new word will be added (Count)</label>
+                        <input type="number" class="form-control" id="idC" name="idC"  aria-label="idC" value="8" aria-describedby="descM">
+                        <div id="descC" class="form-text">When will a new word to be added ?</div>
+                    </div>
+                    <button type="submit" class="btn btn-outline-dark ownbutton"><i class="fas fa-play"> </i> Let's Start the Demonstration  </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

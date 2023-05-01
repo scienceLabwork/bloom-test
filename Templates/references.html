@@ -1,0 +1,48 @@
+<!-- Webpage : Reference.html -->
+<!-- Contents : This web page consist of all the resources used for building this site -->
+
+{% block content %}
+{% include 'header.html' %}
+
+<body>
+    {% include 'navbar.html' %}
+    <!--  -->
+    <div>
+        <div id="heading">
+            <h3 id="headingSentence">
+                References
+            </h3>
+        </div>
+        <div class="container">
+            <table class="table table-bordered">
+                <tr>
+                    <td>Theory</td>
+                    <td>
+                        <a href="https://en.wikipedia.org/wiki/Bloom_filter" target="_blank">Wikipedia</a>, &nbsp;
+                        <a href="https://www.geeksforgeeks.org/bloom-filters-introduction-and-python-implementation/" target="_blank">GeeksForGeeks</a>, &nbsp;
+                        <a href="https://brilliant.org/wiki/bloom-filter/" target="_blank">Brilliant</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Explanation & Detailing</td>
+                    <td>
+                        <a href="https://doi.org/10.1109/ACSAC.2006.26" target="_blank">Research Paper</a>
+                        <a href="http://ijerme.rdmodernresearch.com/wp-content/uploads/2016/06/66.pdf" target="_blank">Journal</a>
+                        <a href="https://youtu.be/V3pzxngeLqw" target="_blank">Youtube</a>
+                        <a href="https://youtu.be/xrjs2x29vJ4" target="_blank">Youtube</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Technology</td>
+                    <td>
+                        <a href="https://flask.palletsprojects.com/en/2.2.x/#user-s-guide" target="_blank">Flask</a>, &nbsp;
+                        <a href="https://getbootstrap.com/docs/5.3/getting-started/introduction/" target="_blank">Bootstrap</a>, &nbsp;
+                        <a href="https://fonts.google.com/" target="_blank">Google Fonts</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    {% include 'bottombar.html' %}
+    {% endblock %}
+</body>

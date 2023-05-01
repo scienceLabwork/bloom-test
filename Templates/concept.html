@@ -1,0 +1,86 @@
+<!-- Webpage : Concept.html -->
+<!-- Contents : This web page consist of the theoretical explanation of Bloom Filters  -->
+{% block content %}
+{% include 'header.html' %}
+
+<body>
+    {% include 'navbar.html' %}
+    <div>
+        <div id="heading">
+            <h3 id="headingSentence">
+                Bloom Filters
+            </h3>
+        </div>
+        <div class="container">
+            <p class="details"><i class="fa-solid fa-arrow-right"></i> Bloom filters are probabilistic data structures which are used to test whether an element is a member of a set. 
+                First introduced in 1970 by Burton Howard Bloom and since then, they have been widely used in applications where memory and computation are constrained.</p>
+            <p class="details"><i class="fa-solid fa-arrow-right"></i>  Here we accept the False positives, but it is 100% accurate about Negatives, so no chance of getting a false negatives</p>
+            <p class="details">Here where hash functions are used to check whether an element (here string) is present in set or not.
+                Also a new element is added in the set only after some fixed number of search operations.
+            </p>
+            <p class="details"><i class="fa-solid fa-arrow-right"></i> 
+                The basic idea behind a Bloom filter is to use a bit array of length m, and k different hash functions that map elements to positions in the bit array. 
+                When an element is inserted into the Bloom filter, each of the k hash functions is applied to the element, and the corresponding bit positions in the bit array are set to 1. 
+                To test whether an element is in the set, the same k hash functions are applied to the element, and if all of the corresponding bit positions in the bit array are set to 1, the element is considered to be in the set. 
+                However, if any of the bit positions are set to 0, the element is not in the set.
+            </p>
+            <p class="details"><i class="fa-solid fa-arrow-right"></i> 
+                The main advantage of Bloom filters is their space efficiency. Because they use a bit array rather than storing the actual elements, they require only a small amount of memory. 
+                However, this space efficiency comes at the cost of a certain probability of false positives. 
+                Specifically, if an element is not in the set, there is no chance of a false negative. 
+                However, if an element is in the set, there is a chance that one or more of the k hash functions will map the element to a bit position that has been set to 1 by another element. 
+                This will result in a false positive, indicating that the element is in the set when it is not.
+            </p>
+            <p class="details"><i class="fa-solid fa-arrow-right"></i> 
+                Bloom filters are majorly used in applications such as network routers, spam filters, database systems and in search engines.
+                In all of these applications we first check whether there is probability that the element is present or not, if present probably then check in the actual storage otherwise it is guarantee that it is not present. 
+            </p>
+            <p class="details"><i class="fa-solid fa-arrow-right"></i> 
+                Bloom filters are majorly used in applications such as network routers, spam filters, database systems and in search engines.
+                In all of these applications we first check whether there is probability that the element is present or not, if present probably then check in the actual storage otherwise it is guarantee that it is not present. 
+            </p>
+        </div>
+        <div id="heading">
+            <h3 id="headingSentence">
+                Analysis of false positive
+            </h3>
+        </div>
+        <div class="container">
+            <p class="details"><i class="fa-solid fa-arrow-right"></i> 
+                Suppose we have m size of bit array and there are in total k hash function, then probability of certain bit will be unset after one insertion will be
+                <b>(1 - 1/m)<sup>k</sup></b>
+            </p>
+            <p class="details"><i class="fa-solid fa-arrow-right"></i> 
+                After n insertions, the probability will be <b>(1 - 1/m)</b><sup>nk</sup>
+            </p>
+            <p class="details"><i class="fa-solid fa-arrow-right"></i> 
+                Therefore, the probability of false positive will be <b> (1- (1 - 1/m)<sup>nk</sup> )<sup>k</sup>,</b> which is approximately
+                <b>(1 - e<sup>-kn/m</sup>)<sup>k</sup></b> 
+                <b><br> where ,<br> k = number of hash function <br> m = size of bit array <br> n = number of elements to be inserted in the filters</b>
+                <br> Also, the Size of the bit array is calculated as <b>m = ( -n x log P ) / (log 2)<sup>2</sup></b> and Optimum number of hash functions are given as <b>k = (m / n) x log 2</b>
+            </p>
+        </div>
+        <div id="heading">
+            <h3 id="headingSentence">
+                Accuracy of the current Implementation
+            </h3>
+        </div>
+        <div class="container">
+            <p class="details"><i class="fa-solid fa-arrow-right"></i> 
+                Here let the size of the bit array be {{m }} (0 based indexing) and the number of hash function be 3, and I have supposed the number of elements to be inserted as {{n}}.
+                <br>i.e. <b>m = {{m }}, k = 3 and n = {{n }}.</b>
+                <br>therefore, <b>Probability of false positive (approx.) = {{ prob }} %</b>
+                <br><b>Note : </b>If for the same value of k and n, if we increase the size of the bit array then the Probability of False Positive decreases significantly.
+                <br> A new search keyword is added into the filter only after it is searched atleast {{ c }} times.
+            </p>
+        </div>
+    </div>
+    <!-- Bottom Bar -->
+    {% include 'bottombar.html' %}
+    {% endblock %}
+</body>
+<!-- 
+
+
+
+ -->

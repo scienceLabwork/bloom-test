@@ -1,0 +1,28 @@
+<!-- Template : For Displaying Assumption of this implementation -->
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal3">
+    <i class="fas fa-circle-info"></i> Assumptions
+</button>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+    <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Assumptions of this model</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body" style="white-space: pre-line;">  
+        <p class = "explanationText">
+            &#8594 The probability of false positive is given by <b> (1- (1 - 1/m)<sup>nk</sup> )<sup>k</sup>,</b> which is approximately 
+            <b>(1 - e<sup>-kn/m</sup>)<sup>k</sup></b>,
+            <br>&#8594 In this implementation, we assume <b>m = {{m}}, k = 3 and n = {{n}} </b> therefore the probability of false positive comes out to be approximately <b>{{prob}} %</b>
+            <br>&#8594 Also a new search keyword is added into filter only after it is searched {{c}} times. 
+        </p>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+    </div>
+    </div>
+</div>
+</div>

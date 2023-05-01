@@ -1,0 +1,93 @@
+<!-- Webpage : Index.html -->
+<!-- Contents : Main page of the site, All the user interaction happens on this page -->
+
+{% block content %}
+{% include 'header.html' %}
+
+<body>
+    {% include 'navbar.html' %}
+
+<div id="heading">
+    <h3 id="headingSentence"> Demonstration of Bloom Filters</h3>
+</div>
+<div class="container" id="mainScreen">
+    <div class="row">
+        <div class="col border">
+            <!-- User Input Area -->
+            <div class="container">
+                <h6 id="normalHead"><u>User Interaction Area</u></h6>
+                <form method="POST">
+                    <div class="input-group mb-3">
+                        <input type="submit" class="btn btn-outline-danger btnSubmit" name="btnSubmit" value="CLEAR">
+                        <input type="text" name="word" class="form-control" placeholder="Enter any keyword" id="word" aria-label="word" aria-describedby="button-addon2">
+                        <input type="submit" class="btn btn-outline-danger btnSubmit" name="btnSubmit" value="SEARCH">  
+                    </div>
+                </form>
+            </div>
+            <!-- Including the respective templates -->
+            {% include 'filterStorage.html' %}
+            {% include 'assumptionModal.html' %}
+        </div>
+        <!-- Output/Result Area -->
+        <div class="col border">
+            <h6 id="normalHead"><u>Log/Output Area</u></h6>
+               <div class="container" id="consoleArea">
+                <table class="table table-bordered">
+                    {% for key,value in result.items() %}
+                    <tr>
+                        {% if key != 'explanation' %}
+                        <td style="width: 50%;">
+                            {{key}}
+                        </td>
+                        <td style="width: 50%;">
+                            {{value}}
+                        </td>
+                        {% endif %}     
+                    </tr>
+                    {% endfor %}
+                </table>    
+            </div>    
+            {% if explanation != '! No operation performed !' %}
+            {% include 'steps.html' %}
+            {% endif %}
+        </div>
+    </div>
+    
+
+    
+    
+    <!-- Displaying Bloom Filter Status -->
+    <div class="row" style="overflow-x: auto;">
+        <h6 id="normalHead"><u>Bloom Filter Array</u></h6>
+        <table class="table table-bordered">
+            <tr>
+                <th>Values</th>
+                {% for i in hash %}
+                <th>{{i}}</th>
+                {% endfor %}
+            </tr>
+            <tr>
+                <th>ith Bit</th>
+                {% for i in range(0,filter_len) %}
+                <td>{{i}}</td>
+                {% endfor %}
+            </tr>
+        </table>
+    </div>
+</div>
+    {% include 'bottombar.html' %}
+    {% endblock %}
+</body>
+</html>
+
+<!-- 
+font-family: 'Bungee Inline', cursive;
+font-family: 'Noto Serif', serif;
+font-family: 'Roboto Slab', serif;
+font-family: 'Zeyada', cursive;
+ -->
+
+<!-- 
+
+    #@m_.@$?
+ -->
